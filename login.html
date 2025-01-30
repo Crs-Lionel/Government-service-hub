@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Login Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #6b73ff, #000dff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background: #ffffff;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .login-container h1 {
+            text-align: center;
+            color: #333;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+        .login-button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .login-button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        .login-button:active {
+            transform: translateY(0);
+        }
+
+        .register-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .register-link a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .register-link a:hover {
+            text-decoration: underline;
+        }
+
+        .feedback {
+            text-align: center;
+            margin-top: 10px;
+            color: red;
+            font-size: 0.9rem;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const form = document.querySelector("form");
+            const feedback = document.getElementById("feedback");
+
+            form.addEventListener("submit", (event) => {
+                event.preventDefault();
+
+                const email = document.getElementById("email").value.trim();
+                const password = document.getElementById("password").value.trim();
+
+                if (!email || !password) {
+                    feedback.textContent = "Please fill in all fields.";
+                    return;
+                }
+
+                // Optional: Store the login attempt in localStorage
+                localStorage.setItem("lastLogin", JSON.stringify({ email, password }));
+
+                feedback.style.color = "green";
+                feedback.textContent = "Login successful! Redirecting...";
+
+                setTimeout(() => {
+                    window.location.href = "index.html"; // Redirect to home page
+                }, 1000);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Login</h1>
+        <form>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="login-button">Login</button>
+            <div id="feedback" class="feedback"></div>
+        </form>
+        <div class="register-link">
+            <p>Don't have an account? <a href="register.html">Register here</a></p>
+        </div>
+    </div>
+    <script>
+        document.querySelector("form").addEventListener("submit", async function (event) {
+            event.preventDefault();
+        
+            const email = document.getElementById("email").value.trim();
+            const password = document.getElementById("password").value;
+        
+            try {
+                const response = await fetch("http://localhost:6900/login", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ email, password })
+                });
+        
+                const result = await response.json();
+                if (response.ok) {
+                    alert(result.message);
+                    window.location.href = "index.html"; // Redirect to home page after login
+                } else {
+                    document.getElementById("feedback").textContent = result.message;
+                    document.getElementById("feedback").style.color = "red";
+                }
+            } catch (error) {
+                console.error("Error:", error);
+                alert("An error occurred. Please try again.");
+            }
+        });
+    </script>    
+</body>
+</html>

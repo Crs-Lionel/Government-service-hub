@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aadhaar Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #007bff, #00c6ff);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+        }
+
+        .section {
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .services {
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: white;
+            padding: 1.5rem;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            width: 220px;
+            margin: 1rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .card h3 {
+            color: #007bff;
+            font-size: 1.5rem;
+        }
+
+        .card p {
+            color: #555;
+            margin: 0.5rem 0;
+        }
+
+        .card a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: 600;
+            display: block;
+            margin-top: 1rem;
+            transition: color 0.3s;
+        }
+
+        .card a:hover {
+            color: #0056b3;
+        }
+
+        .btn {
+            background: #007bff;
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #0056b3;
+        }
+
+        footer {
+            background: #343a40;
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .services {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Aadhaar Services</h1>
+        <p>Access and Manage Your Aadhaar Card Details</p>
+        <button class="btn" onclick="scrollToServices()">Explore Services</button>
+    </header>
+
+    <section class="section" id="services-section">
+        <h2>Aadhaar Services</h2>
+        <div class="services">
+            <div class="card" onclick="openLink('https://uidai.gov.in/en/my-aadhaar/update-aadhaar.html')">
+                <h3>Update Aadhaar</h3>
+                <p>Update your Aadhaar details online.</p>
+                <a href="#">Go to Update</a>
+            </div>
+            <div class="card" onclick="openLink('https://eaadhaar.uidai.gov.in/')">
+                <h3>Download Aadhaar</h3>
+                <p>Download your e-Aadhaar card.</p>
+                <a href="#">Download Now</a>
+            </div>
+            <div class="card" onclick="openLink('https://appointments.uidai.gov.in/easearch.aspx')">
+                <h3>Locate Enrolment Center</h3>
+                <p>Find the nearest Aadhaar enrolment center.</p>
+                <a href="#">Locate Center</a>
+            </div>
+            <div class="card" onclick="openLink('https://resident.uidai.gov.in/check-aadhaar-status')">
+                <h3>Check Aadhaar Status</h3>
+                <p>Track the status of your Aadhaar application.</p>
+                <a href="#">Check Status</a>
+            </div>
+            <div class="card" onclick="openLink('https://resident.uidai.gov.in/aadhaarverification')">
+                <h3>Verify Aadhaar</h3>
+                <p>Verify your Aadhaar number.</p>
+                <a href="#">Verify Now</a>
+            </div>
+            <div class="card" onclick="openLink('https://resident.uidai.gov.in/lost-uideid')">
+                <h3>Retrieve Lost Aadhaar</h3>
+                <p>Recover your lost Aadhaar number or enrolment ID.</p>
+                <a href="#">Retrieve Here</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Government Services Hub. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Scroll to services section
+        function scrollToServices() {
+            document.getElementById('services-section').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Open external links in a new tab
+        function openLink(url) {
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+
+</html>

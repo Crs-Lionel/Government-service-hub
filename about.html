@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Government Services Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background: linear-gradient(135deg, #007bff, #00c6ff);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(to right, #00c6ff, #ff7eb3);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        .content {
+            max-width: 900px;
+            margin: 3rem auto;
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .content h2 {
+            font-size: 2rem;
+            color: #007bff;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .content h2::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 50px;
+            height: 3px;
+            background: #007bff;
+        }
+
+        .content p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        ul {
+            margin-left: 1.5rem;
+            padding-left: 1rem;
+            list-style-type: disc;
+        }
+
+        li {
+            margin: 0.5rem 0;
+        }
+
+        footer {
+            background: #343a40;
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            margin-top: 2rem;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer-links {
+            margin-top: 0.5rem;
+        }
+
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #00c6ff;
+        }
+
+        /* Floating scroll-to-top button */
+        #scrollTop {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: none;
+            transition: background-color 0.3s;
+        }
+
+        #scrollTop:hover {
+            background: #0056b3;
+        }
+
+        /* Section fade-in animation */
+        .content {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .content {
+                padding: 1.5rem;
+            }
+
+            #scrollTop {
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>About Us</h1>
+        <p>Empowering Citizens through Seamless Digital Access to Government Services</p>
+    </header>
+
+    <div class="content">
+        <h2>Our Mission</h2>
+        <p>Government Services Hub aims to connect citizens with essential government services, schemes, and identity resources through a user-friendly platform. Our mission is to simplify and streamline access to government offerings, empowering every individual to participate in the nation's digital growth.</p>
+
+        <h2>What We Offer</h2>
+        <p>We provide a comprehensive platform where users can:</p>
+        <ul>
+            <li>Apply for and manage identity cards such as Aadhaar, PAN, Passport, and more.</li>
+            <li>Explore various government schemes in education, health, agriculture, and employment sectors.</li>
+            <li>Access essential services like income tax filing, land records, and ration card services.</li>
+        </ul>
+
+        <h2>Why Choose Us?</h2>
+        <p>Our platform is designed with simplicity and accessibility in mind, ensuring that citizens from all walks of life can easily navigate and benefit from government services. We bridge the gap between the government and the people by bringing all services under one digital roof.</p>
+
+        <h2>Our Vision</h2>
+        <p>We envision a digitally empowered India where every citizen can seamlessly access government services without barriers. Through innovation and technology, we aim to contribute to the nation's mission of "Digital India."</p>
+
+        <h2>Contact Us</h2>
+        <p>If you have any questions, feedback, or need support, please don't hesitate to reach out. We are here to assist you.</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Government Services Hub. All Rights Reserved.</p>
+        <div class="footer-links">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms and Conditions</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+    </footer>
+
+    <button id="scrollTop" title="Go to top">&uarr;</button>
+
+    <script>
+        const scrollTopButton = document.getElementById("scrollTop");
+
+        window.onscroll = function () {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                scrollTopButton.style.display = "block";
+            } else {
+                scrollTopButton.style.display = "none";
+            }
+        };
+
+        scrollTopButton.onclick = function () {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        };
+
+        // Section reveal on scroll
+        const contentSections = document.querySelectorAll('.content');
+
+        const revealOnScroll = () => {
+            const windowBottom = window.innerHeight + window.scrollY;
+            contentSections.forEach(section => {
+                if (windowBottom > section.offsetTop + 50) {
+                    section.style.opacity = 1;
+                    section.style.transform = 'translateY(0)';
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+    </script>
+</body>
+
+</html>

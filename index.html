@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Government Services Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;  
+    }
+
+    .cards-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      align-items: stretch;
+      /* Ensures all cards stretch to the same height */
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      /* Centers content inside */
+      height: 100%;
+      /* Ensures equal height */
+    }
+
+    .cards-container {
+      align-content: start;
+    }
+
+
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f6f9;
+      color: #333;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background: linear-gradient(135deg, #007bff, #00c6ff);
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+      position: relative;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 600;
+    }
+
+    .auth-buttons {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+
+    .auth-buttons a button {
+      background-color: #0056b3;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border-radius: 25px;
+      margin-left: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .auth-buttons a button:hover {
+      background-color: #00c6ff;
+    }
+
+    nav {
+      background: #0056b3;
+      padding: 1rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: space-evenly;
+      list-style: none;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #00c6ff;
+    }
+
+    .marquee-container {
+      background-color: #e0f7fa;
+      overflow: hidden;
+      white-space: nowrap;
+      padding: 20px 0;
+    }
+
+    .marquee-container img {
+      height: 250px;
+      vertical-align: middle;
+      margin-right: 30px;
+
+    }
+
+    marquee {
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #77cae3, #61b892);
+      padding: 4rem 2rem;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: #CDC1FF;
+       }
+
+    .hero h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: black;
+    }
+
+    .hero p {
+      color: black;
+    }
+
+    .hero input[type="text"] {
+      padding: 0.75rem;
+      width: 80%;
+      max-width: 500px;
+      margin: 1rem 0;
+      border: 1px solid #ddd;
+      border-radius: 25px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .section {
+      padding: 3rem 2rem;
+      background-color: #C4D9FF;
+    }
+
+    .cards-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background: white;
+      padding: 1.5rem;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .card a {
+      color: #007bff;
+      text-decoration: none;
+      padding: 0.5rem;
+      display: block;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .card a:hover {
+      background-color: #e3f2fd;
+    }
+
+    footer {
+      background: #343a40;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+      margin-top: auto;
+    }
+
+    .footer-links {
+      margin: 1rem 0;
+    }
+
+    .footer-links a {
+      color: #ddd;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 500;
+    }
+
+     .footer-links a:hover {
+      text-decoration: underline;
+    } 
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+      }
+
+      .hero input[type="text"] {
+        width: 100%;
+      }
+
+      .cards-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <img src="newlogo.png" style="width: 200px; height: 100px;">
+    
+    <h1>Government Services Hub</h1>
+    <p>Connecting Citizens with Government Services</p>
+    <div class="auth-buttons">
+      <a href="login.html"><button>Login</button></a>
+      <a href="register.html"><button>Register</button></a>
+    </div>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html" target="_blank">Home</a></li>
+      <li><a href="idc.html" target="_blank">Identity Cards</a></li>
+      <li><a href="scheme.html" target="_blank">Schemes</a></li>
+      <li><a href="services.html" target="_blank">Services</a></li>
+      <li><a href="contact.html" target="_blank">Contact</a></li>
+      <li><a href="about.html" target="_blank"> About Us</a></li>
+    </ul>
+  </nav>
+
+  <div class="marquee-container">
+    <marquee behavior="scroll" direction="left">
+      <img src="1.webp"> <img src="2.webp"><img src="sc.webp">
+      <img src="mypic.webp"> <img src="pic2.jpeg"> <img src="rural.jpeg"><img src="sc.jpg">
+
+    </marquee>
+  </div>
+
+  <section class="hero">
+    <h2>Welcome to Government Services Hub</h2>
+    <p>Your Gateway to Government Schemes and Identity Services</p>
+
+    <input type="text" list="search-suggestions" id="searchInput"
+      placeholder="Search for services, schemes, or identity cards..." aria-label="Search Input"
+      onkeyup="searchService()">
+    <section class="hero">
+      <datalist id="search-suggestions">
+        <option value="Aadhaar Card">
+        <option value="PAN Card">
+        <option value="Voter ID">
+        <option value="Passport">
+        <option value="Driving License">
+
+      </datalist>
+    </section>
+
+  </section>
+  </header>
+
+  <section id="identity-cards" class="section">
+    <h2>Government Identity Cards</h2>
+    <div class="cards-container">
+      <div class="card"><a href="aadhaar.html" target="_blank">Aadhaar</a></div>
+      <div class="card"><a href="pan.html" target="_blank">PAN Card</a></div>
+      <div class="card"><a href="https://voters.eci.gov.in/" target="_blank">Voter ID</a></div>
+      <div class="card"><a href="passport.html" target="_blank">Passport</a></div>
+      <div class="card"><a href="https://parivahan.gov.in/parivahan/" target="_blank">Driving License</a></div>
+    </div>
+  </section>
+
+  <section id="schemes" class="section">
+    <h2>Government Schemes</h2>
+    <div class="cards-container">
+      <div class="card"><a href="https://www.myscheme.gov.in/search/category/Education%20&%20Learning"
+          target="_blank">Education Schemes</a></div>
+      <div class="card"><a href="https://www.myscheme.gov.in/search/category/Health%20&%20Wellness"
+          target="_blank">Health Schemes</a></div>
+      <div class="card"><a href="https://www.myscheme.gov.in/search/category/Agriculture,Rural%20&%20Environment"
+          target="_blank">Agriculture Schemes</a></div>
+      <div class="card"><a href="https://www.myscheme.gov.in/search/category/Business%20&%20Entrepreneurship"
+          target="_blank">Business Schemes</a></div>
+      <div class="card"><a href="https://www.myscheme.gov.in/search/category/Skills%20&%20Employment"
+          target="_blank">Skills & Employment</a></div>
+      <div class="card"><a href="https://www.myscheme.gov.in/">More+</a></div>
+    </div>
+  </section>
+
+  <section id="services" class="section">
+    <h2>Government Services</h2>
+    <div class="cards-container">
+      <div class="card"><a href="tax.html" target="_blank">Income Tax Filing</a></div>
+      <div class="card"><a href="lrecords.html" target="_blank">Land Records</a></div>
+      <div class="card"><a href="ration.html" target="_blank">Ration Card Services</a></div>
+    </div>
+  </section>
+
+  <section></section>
+
+  <footer>
+    <p>&copy; 2025 Government Services Hub. All Rights Reserved.</p>
+    <div class="footer-links">
+      <a href="privacy.html" target="_blank">Privacy Policy</a>
+      <a href="terms.html" target="_blank">Terms and Conditions</a>
+      <a href="feedback.html" target="_blank">Feedback</a>
+      <a href="contact.html" target="_blank">Contact Us</a>
+      <a href="about.html" target="_blank">About us</a>
+    </div>
+  </footer>
+
+  <script>
+    // document.getElementById("searchInput").addEventListener("keyup", function(event) {
+    //   if (event.key === "Enter") {
+    //     alert("Search feature coming soon!");
+    //   }
+    // });
+    function searchService() {
+      var searchQuery = document.getElementById("searchInput").value.toLowerCase();
+
+      if (searchQuery.includes("aadhaar card")) {
+        window.location.href = "aadhaar.html";
+      } else if (searchQuery.includes("pan card")) {
+        window.location.href = "pan.html";
+      } else if (searchQuery.includes("voter id")) {
+        window.location.href = "https://voters.eci.gov.in/";
+      } else if (searchQuery.includes("passport")) {
+        window.location.href = "passport.html";
+      } else if (searchQuery.includes("driving license")) {
+        window.location.href = "https://parivahan.gov.in/parivahan/";
+      }
+
+
+    }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script>
+    // Fade-in header and hero section
+    gsap.from("header", {
+
+      duration: 1.5,
+      y: -50,
+      ease: "power2.out"
+    });
+
+    gsap.from(" .hero p", {
+
+      y: 30,
+      duration: 1.2,
+      stagger: 0.3
+    });
+
+    // Stagger cards in each section
+    gsap.from(".cards-container .card", {
+
+      y: 50,
+      duration: 1,
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: ".cards-container",
+        start: "top 80%",
+        toggleActions: "play none none reverse"
+      }
+    });
+
+    // Section reveal animation
+    gsap.utils.toArray(".section").forEach(section => {
+      gsap.from(section, {
+
+        y: 50,
+        duration: 1,
+        scrollTrigger: {
+          trigger: section,
+          start: "top 80%",
+          toggleActions: "play none none reverse"
+        }
+      });
+    });
+
+    // Smooth parallax-like scroll effect for the hero section background
+    gsap.to(".hero", {
+      backgroundPositionY: "-100px",
+      scrollTrigger: {
+        trigger: ".hero",
+        start: "top top",
+        end: "bottom top",
+        scrub: true
+      }
+    });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <script>
+    // Zoom-in and fade for header
+    gsap.from("header", {
+
+      scale: 0.8,
+      duration: 1.5,
+      ease: "power4.out"
+    });
+
+    // Zoom-in for hero text
+    gsap.from(".hero h2, .hero p", {
+
+      scale: 0.9,
+      duration: 1,
+      stagger: 0.3,
+      ease: "elastic.out(1, 0.5)"
+    });
+
+    // Rotate and fade-in cards
+    gsap.from(".cardcontainer", {
+
+      rotateY: 45,
+      duration: 1.5,
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: ".cards-container",
+        start: "top 90%",
+        toggleActions: "play none none reverse"
+      }
+    });
+
+    // Bounce reveal effect for sections
+    gsap.utils.toArray(".section").forEach(section => {
+      gsap.from(section, {
+
+        y: 100,
+        duration: 1,
+        ease: "bounce.out",
+        scrollTrigger: {
+          trigger: section,
+          start: "top 80%",
+          toggleActions: "play none none reverse"
+        }
+      });
+    });
+
+    // Smooth parallax movement for hero background
+    gsap.to(".hero", {
+      backgroundPositionY: "-150px",
+      scrollTrigger: {
+        trigger: ".hero",
+        start: "top top",
+        end: "bottom top",
+        scrub: true
+      }
+    });
+  </script>
+</body>
+
+</html>

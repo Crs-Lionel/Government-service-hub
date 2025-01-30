@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian State Land Records</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #007bff, #00c6ff);
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #ffffff;
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 2s;
+        }
+
+        p {
+            color: #dbeafe;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .state-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .state-item {
+            background: #2563eb;
+            color: white;
+            padding: 15px 20px;
+            margin: 8px 0;
+            border-radius: 8px;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            font-weight: 500;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .state-item:hover {
+            background: #1d4ed8;
+            transform: translateY(-4px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        footer {
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #dbeafe;
+        }
+
+        footer p {
+            margin-top: 10px;
+            font-size: 1rem;
+        }
+
+        .graphic-banner {
+            background: url('https://via.placeholder.com/1200x250') no-repeat center center;
+            background-size: cover;
+            height: 250px;
+            border-radius: 12px;
+            margin: 30px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        }
+
+        .graphic-banner h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+        }
+
+        .fade-in {
+            color: aqua;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .bouncing-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2563eb;
+            display: inline-block;
+            animation: bounce 1s infinite alternate;
+        }
+
+        @keyframes bounce {
+            from {
+                transform: translateY(0);
+            }
+            to {
+                transform: translateY(-10px);
+            }
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            display: none;
+        }
+
+        .back-to-top:hover {
+            background-color: #1d4ed8;
+        }
+
+        .logo {
+            width: 120px;
+            margin-bottom: 20px;
+        }
+    </style>
+    <script>
+        window.addEventListener("scroll", function () {
+            const backToTopBtn = document.getElementById("backToTopBtn");
+            if (window.scrollY > 300) {
+                backToTopBtn.style.display = "block";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+    </script>
+</head>
+
+<body>
+    <img class="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQl1m181S-NTrqzNshTSPCuzW5yVOTEPgn48g&s" alt="Indian National Emblem">
+
+    <h1 class="fade-in">Land Records Portals of Indian States</h1>
+    <p class="bouncing-text">Select a state to visit its official land records website:</p>
+
+    <h2 class="title">Choose Your State</h2>
+
+    <div class="graphic-banner">
+        <h2>Empowering Rural India through Digital Land Records</h2>
+    </div>
+
+    <div class="state-list">
+        <a class="state-item" href="https://bhulekh.mahabhumi.gov.in/" target="_blank">Maharashtra</a>
+        <a class="state-item" href="https://upbhulekh.gov.in/" target="_blank">Uttar Pradesh</a>
+        <a class="state-item" href="https://meebhoomi.ap.gov.in/" target="_blank">Andhra Pradesh</a>
+        <a class="state-item" href="https://landrecords.karnataka.gov.in/" target="_blank">Karnataka</a>
+        <a class="state-item" href="https://banglarbhumi.gov.in/" target="_blank">West Bengal</a>
+        <a class="state-item" href="https://jharbhunaksha.jharkhand.gov.in/" target="_blank">Jharkhand</a>
+        <a class="state-item" href="https://anyror.gujarat.gov.in/" target="_blank">Gujarat</a>
+        <a class="state-item" href="https://jamabandi.nic.in/" target="_blank">Haryana</a>
+        <a class="state-item" href="https://revenueassam.nic.in/" target="_blank">Assam</a>
+        <a class="state-item" href="https://mpbhulekh.gov.in/" target="_blank">Madhya Pradesh</a>
+        <a class="state-item" href="https://www.bhulekh.uk.gov.in/" target="_blank">Uttarakhand</a>
+    </div>
+
+    <footer>
+        <p style="color:black">&copy; 2025 Land Records Information Portal. All rights reserved.</p>
+    </footer>
+
+    <button class="back-to-top" id="backToTopBtn" onclick="scrollToTop()">↑</button>
+
+</body>
+
+</html>

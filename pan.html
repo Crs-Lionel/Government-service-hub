@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAN Card Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #e3f2fd, #bbdefb);
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background: linear-gradient(135deg, #007bff, #00c6ff);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 0.5rem;
+        }
+
+        .section {
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: #0056b3;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            display: flex;
+            align-items: center;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: left;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-emoji {
+            font-size: 3rem;
+            margin-right: 1rem;
+            color: #007bff;
+        }
+
+        .card-content h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .card-content p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .card-content a {
+            text-decoration: none;
+            color: white;
+            background-color: #007bff;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 0.5rem;
+            transition: background-color 0.3s;
+        }
+
+        .card-content a:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            background: #343a40;
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        /* Marquee Section */
+        .marquee-container {
+            overflow: hidden;
+            white-space: nowrap;
+            box-sizing: border-box;
+            background: #0056b3;
+            padding: 1rem 0;
+        }
+
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 10s linear infinite;
+        }
+
+        .marquee-content img {
+            height: 100px;
+            margin-right: 2rem;
+            border-radius: 8px;
+            border: 2px solid #fff;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .services {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>PAN Card Services</h1>
+        <p>Access and Manage Your PAN Card Details</p>
+    </header>
+
+    <div class="marquee-container">
+        <div class="marquee-content">
+            <img src="pan1.avif" alt="Service 1">
+            <img src="pan2.jpg">
+            
+        </div>
+    </div>
+
+    <section class="section">
+        <h2>PAN Card Services</h2>
+        <div class="services">
+            <div class="card">
+                <div class="card-emoji">📝</div>
+                <div class="card-content">
+                    <h3>Apply for PAN</h3>
+                    <p>Apply for a new PAN card online.</p>
+                    <a href="https://www.protean-tinpan.com/services/pan/new-pan.html" target="_blank">Apply Now</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-emoji">🔄</div>
+                <div class="card-content">
+                    <h3>Update PAN</h3>
+                    <p>Update or correct your PAN details.</p>
+                    <a href="https://www.protean-tinpan.com/services/pan/pan-correction.html" target="_blank">Update Here</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-emoji">🔍</div>
+                <div class="card-content">
+                    <h3>Track PAN Status</h3>
+                    <p>Check the status of your PAN application.</p>
+                    <a href="https://www.protean-tinpan.com/services/pan/track-pan.html" target="_blank">Track Now</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-emoji">📥</div>
+                <div class="card-content">
+                    <h3>Reprint PAN</h3>
+                    <p>Request a reprint of your PAN card.</p>
+                    <a href="https://www.protean-tinpan.com/services/pan/reprint.html" target="_blank">Reprint PAN</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-emoji">📄</div>
+                <div class="card-content">
+                    <h3>Verify PAN</h3>
+                    <p>Verify your PAN details online.</p>
+                    <a href="https://www.protean-tinpan.com/services/pan/verify-pan.html" target="_blank">Verify Here</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Government Services Hub. All Rights Reserved.</p>
+    </footer>
+</body>
+
+</html>

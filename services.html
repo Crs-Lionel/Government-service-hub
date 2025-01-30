@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <style>
+            .section  {
+      padding: 3rem 2rem;
+     
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f6f9;
+      color: #333;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background-color: beige;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    header {
+      background: linear-gradient(135deg, #007bff, #00c6ff);
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+      position: relative;
+    }
+    
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 600;
+    }
+    .section h2{
+        color: black;
+    }
+    
+    .cards-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+      display: flex;
+      
+      justify-content: center; 
+      text-align: center; 
+      margin: auto;
+      
+    }
+    .card {
+      background: white;
+      padding: 1.5rem;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+    
+    .card a {
+      color: #007bff;
+      text-decoration: none;
+      padding: 0.5rem;
+      display: block;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .card a:hover {
+      background-color: #e3f2fd;
+    }
+    
+    nav {
+      background: #0056b3;
+      padding: 1rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: space-evenly;
+      list-style: none;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #00c6ff;
+    }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="idc.html">Identity Cards</a></li>
+          <li><a href="scheme.html">Schemes</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    
+  <section id="services" class="section">
+    <h2>Government Services</h2>
+    <div class="cards-container">
+      <div class="card"><a href="http://127.0.0.1:3000/tax.html" target="_blank" >Income Tax Filing</a></div>
+      <div class="card" ><a href="http://127.0.0.1:3000/lrecords.html" target="_blank" >Land Records</a></div>
+      <div class="card"><a href="http://127.0.0.1:3000/ration.html" target="_blank">Ration Card Services</a></div>
+    </div>
+  </section>
+</body>
+</html>

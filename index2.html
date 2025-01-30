@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Government Services Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    /* Your existing CSS remains unchanged */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f6f9;
+      color: #333;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background: linear-gradient(135deg, #007bff, #00c6ff);
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+      position: relative;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 600;
+    }
+
+    .auth-buttons {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+
+    .auth-buttons a button {
+      background-color: #0056b3;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border-radius: 25px;
+      margin-left: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .auth-buttons a button:hover {
+      background-color: #00c6ff;
+    }
+
+    /* Language Dropdown Styles */
+    .language-selector {
+      position: absolute;
+      top: 20px;
+      right: 100px;
+      background-color: white;
+      color: #007bff;
+      border: 1px solid #ddd;
+      padding: 5px 15px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+    .language-selector select {
+      border: none;
+      background: transparent;
+      color: inherit;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    nav {
+      background: #0056b3;
+      padding: 1rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: space-evenly;
+      list-style: none;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #00c6ff;
+    }
+
+    .marquee-container {
+      background-color: #e0f7fa;
+      overflow: hidden;
+      white-space: nowrap;
+      padding: 20px 0;
+    }
+
+    .marquee-container img {
+      height: 250px;
+      vertical-align: middle;
+      margin-right: 30px;
+    }
+
+    marquee {
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+      padding: 4rem 2rem;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: white;
+    }
+
+    .hero h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero input[type="text"] {
+      padding: 0.75rem;
+      width: 80%;
+      max-width: 500px;
+      margin: 1rem 0;
+      border: 1px solid #ddd;
+      border-radius: 25px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .section {
+      padding: 3rem 2rem;
+    }
+
+    .cards-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background: white;
+      padding: 1.5rem;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .card a {
+      color: #007bff;
+      text-decoration: none;
+      padding: 0.5rem;
+      display: block;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .card a:hover {
+      background-color: #e3f2fd;
+    }
+
+    footer {
+      background: #343a40;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+      margin-top: auto;
+    }
+
+    .footer-links {
+      margin: 1rem 0;
+    }
+
+    .footer-links a {
+      color: #ddd;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 500;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+      }
+
+      .hero input[type="text"] {
+        width: 100%;
+      }
+
+      .cards-container {
+        grid-template-columns: 1fr;
+      }
+    }
+    .dropdown-content {
+      padding: 10px;
+      background-color: #f9f9f9;
+      border: 1px solid #ccc;
+      max-width: 300px;
+      margin-top: 5px;
+    }
+    .hidden {
+      display: none;
+    }
+    .tab-btn {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      cursor: pointer;
+    }
+    .tab-btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Government Services Hub</h1>
+    <p>Connecting Citizens with Government Services</p>
+
+    <!-- Language Selector Dropdown -->
+    <div class="language-selector">
+      <select id="languageSelect" onchange="changeLanguage()">
+        <option value="en">English</option>
+        <option value="hi">Hindi</option>
+        <option value="es">Spanish</option>
+        <option value="fr">French</option>
+      </select>
+    </div>
+
+    <div class="auth-buttons">
+      <a href="login.html"><button>Login</button></a>
+      <a href="register.html"><button>Register</button></a>
+    </div>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#identity-cards">Identity Cards</a></li>
+      <li><a href="#schemes">Schemes</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="marquee-container">
+    <marquee behavior="scroll" direction="left">
+      <img src="mypic.webp"> <img src="pic2.jpeg"> <img src="rural.jpeg"><img  src="sc.jpg">
+    </marquee>
+  </div>
+
+  <section class="hero">
+    <h2>Welcome to Government Services Hub</h2>
+    <p>Your Gateway to Government Schemes and Identity Services</p>
+    <input type="text" list="search-suggestions" id="searchInput" placeholder="Search for services, schemes, or identity cards...">
+  </section>
+
+  <section id="identity-cards" class="section">
+    <h2>Government Identity Cards</h2>
+    <div class="cards-container">
+      <button class="tab-btn" onclick="toggleDropdown()"><div class="card"><a href="aadhaar.html">Aadhaar</a></div></button>
+      <div class="card"><a href="pan.html">PAN Card</a></div>
+      <div class="card"><a href="https://voters.eci.gov.in/">Voter ID</a></div>
+      <div class="card"><a href="passport.html">Passport</a></div>
+      <div class="card"><a href="https://parivahan.gov.in/parivahan/">Driving License</a></div>
+    </div>
+    <button class="tab-btn" onclick="toggleDropdown()">Aadhaar</button>
+
+  <div id="aadharInfo" class="dropdown-content hidden">
+    <div id="content">
+      <!-- Wikipedia content will be loaded here -->
+    </div>
+  </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Government Services Hub. All Rights Reserved.</p>
+    <div class="footer-links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms and Conditions</a>
+      <a href="feedback.html">Feedback</a>
+      <a href="#contact">Contact Us</a>
+    </div>
+  </footer>
+
+  <script>
+    function changeLanguage() {
+      const selectedLanguage = document.getElementById("languageSelect").value;
+      if (selectedLanguage === "hi") {
+        alert("Hindi language content will be loaded soon!");
+        // Logic to change content to Hindi (could involve loading language-specific JSON, or replacing text)
+      } else if (selectedLanguage === "es") {
+        alert("Spanish language content will be loaded soon!");
+      } else if (selectedLanguage === "fr") {
+        alert("French language content will be loaded soon!");
+      } else {
+        alert("English language content is already selected!");
+      }
+    }
+
+    async function toggleDropdown() {
+      const dropdown = document.getElementById("aadharInfo");
+      const content = document.getElementById("content");
+
+      if (dropdown.classList.contains("hidden")) {
+        // Fetch content from Wikipedia API
+        try {
+          const response = await fetch(
+            "https://en.wikipedia.org/api/rest_v1/page/summary/Aadhaar"
+          );
+          const data = await response.json();
+          content.innerHTML = `<h4>${data.title}</h4><p>${data.extract}</p>`;
+        } catch (error) {
+          content.innerHTML = `<p>Error fetching content. Please try again.</p>`;
+        }
+      }
+
+      dropdown.classList.toggle("hidden");
+    }
+  </script>
+</body>
+</html>
